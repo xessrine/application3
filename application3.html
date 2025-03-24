@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Job Application</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c2d0e9; 
+            color: #333;
+            line-height: 1.6;w
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            text-align: center;
+        }
+
+       
+        header {
+            background: #5b7ba4; 
+            color: rgb(31, 50, 70);
+            padding-top: 25px;
+            min-height: 60px;
+            border-bottom: #3e5676 4px solid; 
+            box-shadow: 0 2px 5px rgb(48, 68, 112); 
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header #branding {
+            float: left;
+        }
+
+        header #branding h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+
+        .highlight, header .current a {
+            color: #1f3246;
+            font-weight: bold;
+        }
+
+        
+        #showcase {
+            min-height: 400px;
+            background: url('https://images.unsplash.com/photo-1497252611318-4985ef1f6f92?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center/cover;
+            text-align: center;
+            color: #3c577d;
+            padding-top: 80px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        #showcase h1 {
+            margin-top: 20px;
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #showcase p {
+            font-size: 22px;
+            font-weight: 300; 
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .button_1 {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #6778ab;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button_1:hover {
+            background-color: #34446e;
+        }
+
+        
+        form {
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+            margin-top: 30px;
+            border: 1px solid #ddd; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600; 
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        textarea:focus {
+            border-color: #e74c3c;
+            outline: none;
+        }
+
+
+    
+
+        button {
+            background-color: #427393; 
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        
+        .form-page {
+            display: none;
+        }
+
+        .form-page.active {
+            display: block;
+        }
+
+       
+        #thankYouPage {
+            text-align: center;
+            padding: 40px;
+            background: #ecf0f1; 
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        #thankYouPage h2 {
+            font-size: 36px;
+            color: #44588c;
+            margin-bottom: 20px;
+        }
+
+        #thankYouPage img {
+            max-width: 300px;
+            margin-bottom: 20px;
+            border-radius: 8px; 
+        }
+
+        #thankYouPage p {
+            font-size: 18px;
+            color: #555;
+        }
+
+       
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 30px;
+        }
+
+        
+        .form-image {
+            max-width: 100px; 
+            margin: 0 auto 20px; 
+            display: block; 
+            border-radius: 50%; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .apply-button {
+            background-color: #4285F4;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .apply-button:hover {
+            background-color: #357AE8;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Job</span> Application</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="application3.html">Home</a></li>
+                    <li class="current"><a href="application3.html">Apply Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Join Our Team: Be One of the Few to [Benefit of the Job]</h1>
+            <p>Don't watch the clock; do it. Keep going. We're looking for passionate individuals like you!</p>
+            <a href="#" class="button_1" onclick="showPage('page1')">Apply Now</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <form id="applicationForm">
+           
+            <div id="page1" class="form-page active">
+                <h2>Personal Information</h2>
+
+                <div class="container">
+                    <h1>Image Upload and Preview</h1>
+                    <input type="file" id="imageInput" accept="image/*">
+                    <div class="preview" id="imagePreview">
+                      
+                    </div>
+                </div>
+            
+                <script src="scriptt.js"></script>
+                
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="middleName">Middle Name:</label>
+                <input type="text" id="middleName" name="middleName">
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="phone">Phone No:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <h2>Job Position</h2>
+                <select id="position" name="position"
+
+
+required>
+
+<option
+
+value=""></option>
+
+<option
+
+value="Event">Event Coordinator and Planner</option>
+
+<option
+
+value="Ongville">Ongville Hotel and Event Management</option>
+
+<option
+
+value="">Full Stack Developer</option>
+
+<option
+
+value="">Ui Designer</option>
+
+<option
+
+value="">Flutter Developer</option>
+
+<option
+
+value="SM">Sales Lady</option>
+
+<option
+
+value="Chowking">Server</option>
+
+<option
+
+value="Mr. Fields">Barista</option>
+
+<option
+
+value="Doctor's Hospital">Nurse</option>
+
+<option
+
+value="Drugstore">Med Expert</option>
+
+<option
+
+value="Waltermart">Staff/Organizer</option>
+
+<option
+
+value="Mr. DIY">Cashier</option>    
+
+
+                    
+<input type="text" id="position" name="position" required>
+                </select>
+
+                <a href="mailto:mangahoon223@gmail.com?subject=Application&body=I would like to apply for the position." class="apply-button">Apply Now</a>
+            </div>
+
+            
+            <div id="page2" class="form-page">
+                <h2>Work Experience & Education</h2>
+                <img src="girl.jpg" alt="Work Experience" class="form-image">
+
+                <label for="jobTitle">Job Title:</label>
+                <input type="text" id="jobTitle" name="jobTitle">
+
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company">
+
+                <label for="jobDescription">Job Description:</label>
+                <textarea id="jobDescription" name="jobDescription" rows="4"></textarea>
+
+                <label for="resume">Resume/CV Upload (PDF preferred):</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+
+                <label for="skills">List your skills (comma-separated):</label>
+                <input type="text" id="skills" name="skills">
+
+                <h2>Education</h2>
+                <label for="school">School:</label>
+                <input type="text" id="school" name="school">
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+
+                <label for="graduationDate">Graduation Date:</label>
+                <input type="date" id="graduationDate" name="graduationDate">
+
+                <label for="availability">Availability:</label>
+                <input type="text" id="availability" name="availability">
+
+                <label for="salary">Salary Expectation:</label>
+                <input type="text" id="salary" name="salary">
+
+                <label for="heardAboutUs">How did you hear about us?</label>
+                <input type="text" id="heardAboutUs" name="heardAboutUs">
+                <div class="form-group">
+
+                    
+
+                <button type="button" onclick="showPage('page1')">Previous</button>
+                <button type="button" onclick="submitForm()">Submit Application</button>
+            </div>
+        </form>
+
+        
+        <div id="thankYouPage">
+            <h2>Thank You!</h2>
+            <img src="thanks.jpg" alt="Thank You" style="max-width: 300px;">
+            <p>Thank you for submitting your application. We appreciate your interest in joining our team. We will review your application and be in touch if there's a potential fit.</p>
+        </div>
+    
+
+     <footer>
+        <p>Copyright &copy; 2025 [Job Application]</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            
+            let pages = document.querySelectorAll('.form-page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function submitForm() {
+            
+            let requiredFields = document.querySelectorAll('#page1 input[required], #page2 input[required], #page2 textarea[required]');
+            for (let i = 0; i < requiredFields.length; i++) {
+                if (!requiredFields[i].value) {
+                    alert('Please fill out all required fields.');
+                    return;
+                }
+            }
+
+             
+            
+            document.getElementById('applicationForm').style.display = 'none';
+            document.getElementById('thankYouPage').style.display = 'block';
+        }
+
+        
+        document.getElementById('thankYouPage').style.display = 'none';
+    </script>
+</body>
+</html>
